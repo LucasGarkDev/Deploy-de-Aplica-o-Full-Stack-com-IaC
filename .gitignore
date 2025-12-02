@@ -4,3 +4,5 @@ node_modules/
 terraform.tfstate
 terraform.tfstate.backup
 .DS_Store
+
+infra/sandbox-credentials.sh
