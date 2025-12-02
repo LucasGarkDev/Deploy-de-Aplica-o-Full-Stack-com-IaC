@@ -1,3 +1,4 @@
+# smart-class/frontend/Dockerfile
 # -------------------------------
 # Etapa 1 — Build do frontend (Vite)
 # -------------------------------

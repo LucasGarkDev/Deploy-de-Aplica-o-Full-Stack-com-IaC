@@ -1,3 +1,4 @@
+# smart-class/backend/Dockerfile
 # === Etapa base ===
 FROM node:20-alpine
 

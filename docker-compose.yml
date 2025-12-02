@@ -1,16 +1,16 @@
-# smart-class/docker-compose.yml(a que roda local, sem docker hub)
+# smart-class/docker-compose.yml(a que roda usando docker hub)
 version: '3.9'
 
 services:
   db:
     image: postgres:16-alpine
-    container_name: smartclass-db
+    container_name: smartclass-test-db
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: smartclass
     ports:
-      - "5433:5432"
+      - "5434:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
     healthcheck:
@@ -19,10 +19,8 @@ services:
       retries: 5
 
   backend:
-    build: ./backend
-    container_name: smartclass-backend
-    ports:
-      - "5000:5000"
+    image: garcia3glxy/smartclass-backend:latest
+    container_name: smartclass-test-backend
     depends_on:
       db:
         condition: service_healthy
@@ -30,14 +28,16 @@ services:
       DATABASE_URL: "postgresql://admin:admin@db:5432/smartclass?schema=public"
       JWT_SECRET: "supersecreto"
       PORT: 5000
+    ports:
+      - "5001:5000"
 
   frontend:
-    build: ./frontend
-    container_name: smartclass-frontend
-    ports:
-      - "5173:80"
+    image: garcia3glxy/smartclass-frontend:latest
+    container_name: smartclass-test-frontend
     depends_on:
       - backend
+    ports:
+      - "5174:80"
 
 volumes:
   db_data:
