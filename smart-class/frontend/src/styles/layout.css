@@ -1,0 +1,85 @@
+@import "./variables.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background: var(--bg-alt);
+  color: var(--text-dark);
+}
+
+header.header {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+
+header.header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+header.header button {
+  background: transparent;
+  border: 1px solid var(--text-light);
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.main-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.turma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.turma-card {
+  background: var(--bg-main);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.1s ease-in-out;
+}
+
+.turma-card:hover {
+  transform: translateY(-3px);
+}
+
+.turma-actions {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.turma-actions button {
+  margin-left: 0.3rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th,
+.table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.6rem;
+}
+
+.table th {
+  background-color: var(--neutral);
+}

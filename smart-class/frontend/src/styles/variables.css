@@ -1,0 +1,26 @@
+:root {
+  /* Cores principais */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #38bdf8;
+  --accent: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --neutral: #f1f5f9;
+
+  /* Texto */
+  --text-dark: #1e293b;
+  --text-light: #f8fafc;
+
+  /* Backgrounds */
+  --bg-main: #ffffff;
+  --bg-alt: #f9fafb;
+
+  /* Bordas e sombras */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  /* Tipografia */
+  --font-family: "Inter", sans-serif;
+  --font-size-base: 16px;
+}

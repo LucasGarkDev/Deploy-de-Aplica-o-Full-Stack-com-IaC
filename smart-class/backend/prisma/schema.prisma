@@ -1,0 +1,86 @@
+// === Configurações do Prisma ===
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// === Modelos do SmartClassroom ===
+
+// 👤 Usuário (professor)
+model User {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String   @unique
+  senhaHash String
+  turmas    Turma[]
+  criadoEm  DateTime @default(now())
+
+  @@map("user")
+}
+
+// 🏫 Turma
+model Turma {
+  id          Int        @id @default(autoincrement())
+  nome        String
+  userId      Int
+  user        User       @relation(fields: [userId], references: [id])
+  alunos      Aluno[]
+  grupos      Grupo[]
+  chamadas    Chamada[]
+  criadoEm    DateTime   @default(now())
+
+  @@map("turma")
+}
+
+// 👨‍🎓 Aluno
+model Aluno {
+  id        Int        @id @default(autoincrement())
+  nome      String
+  turmaId   Int
+  turma     Turma      @relation(fields: [turmaId], references: [id])
+  grupos    Grupo[]    @relation("AlunosGrupos")
+  presencas Presenca[]
+
+  @@map("aluno")
+}
+
+// 👥 Grupo de alunos
+model Grupo {
+  id       Int      @id @default(autoincrement())
+  nome     String
+  turmaId  Int
+  turma    Turma    @relation(fields: [turmaId], references: [id])
+  alunos   Aluno[]  @relation("AlunosGrupos")
+  criadoEm DateTime @default(now())
+
+  @@map("grupo")
+}
+
+// 🕐 Chamada (registro de presença)
+model Chamada {
+  id              Int        @id @default(autoincrement())
+  dataHora        DateTime
+  quantidadeAulas Int        @default(1)
+  status          String     @default("ATIVA") // ATIVA, ENCERRADA, CANCELADA
+  turmaId         Int
+  turma           Turma      @relation(fields: [turmaId], references: [id])
+  presencas       Presenca[]
+
+  @@map("chamada")
+}
+
+// ✅ Presença individual por aluno
+model Presenca {
+  id         Int       @id @default(autoincrement())
+  presente   Boolean   @default(false)
+  alunoId    Int
+  chamadaId  Int
+  aluno      Aluno     @relation(fields: [alunoId], references: [id])
+  chamada    Chamada   @relation(fields: [chamadaId], references: [id])
+
+  @@map("presenca")
+}

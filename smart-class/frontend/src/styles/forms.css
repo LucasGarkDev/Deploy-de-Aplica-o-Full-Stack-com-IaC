@@ -1,0 +1,61 @@
+@import "./variables.css";
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input,
+select,
+textarea {
+  font-size: 1rem;
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--border-radius);
+  background: white;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.9rem;
+  margin-top: -0.3rem;
+}
+
+.login-page,
+.register-page {
+  max-width: 400px;
+  margin: 5rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.login-page input,
+.register-page input {
+  margin-bottom: 0.6rem;
+}
+
+.login-page button,
+.register-page button {
+  margin-top: 0.6rem;
+}
+
+span {
+  color: var(--primary);
+  cursor: pointer;
+}

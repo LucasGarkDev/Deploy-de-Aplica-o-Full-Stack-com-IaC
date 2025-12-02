@@ -1,0 +1,50 @@
+@import "./variables.css";
+
+button {
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+button.primary:hover {
+  background: var(--primary-dark);
+}
+
+button.secondary {
+  background: var(--secondary);
+  color: white;
+}
+
+button.accent {
+  background: var(--accent);
+  color: white;
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+}
+
+button.danger:hover {
+  opacity: 0.85;
+}
+
+button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
