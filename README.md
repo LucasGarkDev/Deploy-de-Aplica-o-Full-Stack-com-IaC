@@ -114,8 +114,21 @@ Esta atividade consolidou o entendimento sobre a integração de ferramentas Dev
 * ✅ Gerenciar o ciclo de vida completo da infraestrutura: **criar, testar e destruir** (Infrastructure Lifecycle Management).
 
 ---
+---
+## 🖼️ 5. Prints Obrigatórios (Documentação)
+
+### 📍 Print 1 — Resultado do terraform apply
+![Resultado do comando terraform apply](image/image_copy.png)
+
+### 📍 Print 2 — Aplicação Rodando
+![Aplicação Smart-Class rodando com IP público do Fargate](image/image.png)
+
+### 📍 Print 3 — Destruição Completa (terraform destroy)
+![Resultado do comando terraform destroy](image/destroy_complete.png)
+---
 
 ## 🔗 Repositório GitHub
 
 O código-fonte completo da IaC e da aplicação está disponível em:
 [https://github.com/LucasGarkDev/Deploy-de-Aplica-o-Full-Stack-com-IaC](https://github.com/LucasGarkDev/Deploy-de-Aplica-o-Full-Stack-com-IaC)
+
