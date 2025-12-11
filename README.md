@@ -88,22 +88,6 @@ O deploy seguiu um ciclo de duas execuções de `apply` para injetar o IP públi
 
 ---
 
-## 🖼️ 5. Prints Obrigatórios (Documentação)
-
-### 📍 Print 1 — Resultado do `terraform apply`
-
-(Insira o print da mensagem "Apply complete" aqui)
-
-### 📍 Print 2 — Aplicação Rodando
-
-(Insira o print da aplicação Smart-Class acessada via navegador com o IP público do Fargate Frontend aqui)
-
-### 📍 Print 3 — Destruição Completa (`terraform destroy`)
-
-(Insira o print da mensagem "Destroy complete" aqui)
-
----
-
 ## ✅ 6. Conclusões e Aprendizados
 
 Esta atividade consolidou o entendimento sobre a integração de ferramentas DevOps, provando a capacidade de:
